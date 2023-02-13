@@ -22,6 +22,7 @@ const multiply = function(a,b) {
 const divide = function(a,b){
     if (b !=0)
         {return a/b}
+    else(return "Hey, you can't divide by 0!")
 }
 
 
@@ -88,15 +89,23 @@ function secondArgOps(input){
     output.textContent += input;
 }
 
-function clearAll(){
-    output.textContent = '';
-    firstArg= '';
-    operator='';
-    secondArg='';
-    eqLine.textContent='';
-}
 
-//Let's define all the buttons.//
+//Making the buttons work.//
+const enter = document.querySelector('#enter');
+enter.addEventListener('click', function(){
+    if(secondArg == ''){
+        output.textContent = firstArg;
+    }
+    else{
+        console.log(`first:${firstArg} second:${secondArg} ${operator}`);
+        output.textContent = (`Answer: ${operate(operator, parseFloat(firstArg), parseFloat(secondArg))}`);
+        eqLine.textContent = (`${firstArg} ${operator} ${secondArg} =`);
+        firstArg = operate(operator, parseFloat(firstArg), parseFloat(secondArg));
+        secondArg = '';
+        operator='';
+    }
+    boundsCheck();
+});
 const operations = document.querySelectorAll('.operation');
 operations.forEach(operation =>{
         operation.addEventListener('click', function(){
@@ -113,6 +122,13 @@ operations.forEach(operation =>{
         }
     });
 });
+function clearAll(){
+    output.textContent = '';
+    firstArg= '';
+    operator='';
+    secondArg='';
+    eqLine.textContent='';
+}
 
 const clear = document.querySelector('#clear');
 clear.addEventListener('click', function(){
@@ -124,14 +140,10 @@ const operate = function(operator, num1, num2){
     switch(operator){
         case '+':
             return add(num1, num2);
-            break;
         case '-':
             return subtract(num1, num2);
-            break;
         case '*':
             return multiply(num1, num2);
-            break;
         case '/':
             return divide(num1, num2);
-            break;
 }}
