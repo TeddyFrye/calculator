@@ -28,18 +28,6 @@ const divide = function(a,b){
 
 //Define the inputs//
 function firstArgOps(input){
-    if (input == '.' && firstArg.includes('.')){
-        return;
-    }
-    if (input == '+/-' && output.textContent == ''){
-        return;
-    }
-    if (input == '+/-'){
-        firstArg = -(parseFloat(firstArg));
-        firstArg = firstArg.toString();
-        output.textContent = firstArg;
-        return;
-    }
     if (input == 'back'){
         firstArg = firstArg.split('');
         firstArg.pop();
@@ -47,14 +35,6 @@ function firstArgOps(input){
         output.textContent = firstArg;
         return;
     }
-    if (input == '%' && output.textContent == ''){
-        return;
-    }
-    if(input == "%"){
-        firstArg = (parseFloat(firstArg)/100);
-        firstArg = firstArg.toString();
-        output.textContent = firstArg;
-        return;
     }
     firstArg += input;
     output.textContent += input;
@@ -63,27 +43,6 @@ function firstArgOps(input){
 function secondArgOps(input){
     if (secondArg == '' && output.textContent != ''){
         output.textContent = '';
-    }
-    if (input == '.' && secondArg.includes('.')){
-        return;
-    }
-    if (input == '+/-' && output.textContent == ''){
-        return;
-    }
-    if (input == '+/-'){
-        secondArg = -(parseFloat(secondArg));
-        secondArg = secondArg.toString();
-        output.textContent = secondArg;
-        return;
-    }
-    if (input == '%' && output.textContent == ''){
-        return;
-    }
-    if(input == "%"){
-        secondArg = (parseFloat(secondArg)/100);
-        secondArg = secondArg.toString();
-        output.textContent = secondArg;
-        return;
     }
     secondArg += input;
     output.textContent += input;
