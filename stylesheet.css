@@ -1,1 +1,72 @@
-here is the css
+*{
+    font-family: "Amatic SC", sans-serif;
+    font-weight: bold;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #ccccff;
+}
+
+h1{
+    font-size: 50px;
+}
+
+
+/*Button styles*/
+.calculator{
+    border: 5px solid black;
+    border-radius: 10px;
+    width: 300px;
+    height: 500px;
+    background-color: #ccccff;
+}
+
+button{
+    border-radius: 50%;
+    outline: none;
+    border: 1px solid black;
+    font-size: 30px;
+    background-color: white;
+    box-sizing: border-box;
+    line-height: 20px
+}
+
+button:hover{
+    transform: scale(1.1);
+}
+
+button:active{
+    transform: scale(1.2);
+}
+
+
+/*Eqline and Output*/
+.display{
+    position: relative;
+    width: 100%;
+    height: 25%;
+    background-color: white;
+    border-radius: 7px;
+    overflow: hidden;
+}
+#eqLine{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 0px;
+    font-size: 30px;
+}
+
+#output{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding-right: 10px;
+    margin-bottom: 0px;
+    font-size: 30px;
+
+}
